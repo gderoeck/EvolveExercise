@@ -1,13 +1,18 @@
 ﻿using Exercise2_VehicleClassStructure.AbstractClasses;
+using Exercise2_VehicleClassStructure.Interfaces;
 
 namespace Exercise2_VehicleClassStructure
 {
-    public class Car : Vehicle
+    public class Car(IParkingLot parkingLot, IGarage garage) : Vehicle(parkingLot, garage)
     {
-        public override void ParkInGarage(string spotType)
+        public override void ParkInGarage()
         {
-            // Check for compact spaces first. If none are available, check for normal.
-            // Handle logic to add the car to the space.
+            base.ParkInGarage();
+        }
+
+        public override void ParkInLot()
+        {
+            base.ParkInLot();
         }
     }
 }
